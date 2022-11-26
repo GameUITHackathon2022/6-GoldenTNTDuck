@@ -8,7 +8,7 @@ const signInSchema = yup.object().shape({
   password: yup
     .string()
     .required("Password Confirmation is a required field")
-    .min(8, "Your password should have at least 8 characters"),
+    .min(6, "Your password should have at least 6 characters"),
 });
 
 export default signInSchema;

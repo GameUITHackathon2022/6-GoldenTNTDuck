@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { queryClient } from './api/queyClient'
-import { AuthContextProvider } from './context/authContext'
+// import { AuthContextProvider } from './context/authContext'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,10 +14,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient} >
-        <AuthContextProvider>
           <App />
           <ReactQueryDevtools initialIsOpen={false} position={'bottom-right'} />
-        </AuthContextProvider>
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

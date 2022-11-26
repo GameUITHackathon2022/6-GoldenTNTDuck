@@ -3,17 +3,19 @@ import Sidebar from '../components/Profile/Sidebar';
 import Grid from '@mui/material/Grid';
 import Ranking from '../components/Ranking';
 import Nav from '../components/Navbar'
+import useCurrentUser from '../hooks/useCurrentUser'
 
 const Profile = () => {
+    const {data} = useCurrentUser()
     return (
         <>
-        <Nav/>
+        <Nav user={data?.data}/>
         <Grid
             container
             justifyContent='center'
         >
             <Grid item xs={2}>
-                <Sidebar/>
+                <Sidebar user={data?.data}/>
             </Grid>
             <Grid item xs={7}>
                 <Feed />

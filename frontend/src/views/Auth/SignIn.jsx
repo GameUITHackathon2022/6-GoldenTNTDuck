@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { AuthContext } from "../../context/authContext";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -21,7 +20,6 @@ const theme = createTheme();
 
 const SignIn = () => {
   const [isSuccess, setIsSuccess] = useState(false);
-  const { setCurrentUser } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -33,14 +31,10 @@ const SignIn = () => {
 
   const onSubmit = async (data) => {
     try {
+      console.log("Waiting")
       const response = await axiosClient.post("/users/sign_in", data);
-      setCurrentUser(response.data.data);
       const localStorageTokenName = "guh_token"
-      // if (response.data.status === 'success') {
-      //   localStorage[localStorageTokenName] = response.headers.authorization.slice(7)
-      //   setIsSuccess(true);
-      // }
-      if (true) {
+      if (response?.data?.status === 'success') {
         localStorage[localStorageTokenName] = response.headers.authorization.slice(7)
         setIsSuccess(true);
       }

@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import { useQuery } from '@tanstack/react-query';
 import axiosClient from '../api/axiosClient';
 
 const API_GET_RANKING = "https://tranquil-ravine-97175.herokuapp.com/api/v1/sort_by_trees/"
 
-function getRankingData()
-{
-  return axiosClient.get(API_GET_RANKING).then((responde) => responde.data)
-}
+const getRankingData = () => axiosClient.get(API_GET_RANKING)
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -31,25 +29,24 @@ const RankingBox = styled(Paper)(({ theme }) => ({
 }));
 
 const Ranking = () => {
-  const [ranks, setRanks] = useState([])
+  const {data} = useQuery({
+    queryKey: ['rank'],
+    queryFn: getRankingData
+  })
 
-  useEffect(() => {
-    let mounted = true;
-    getRankingData().then((items) => {
-      if (mounted) {
-        setRanks(items.data)
-      }
-    })
+  const users =data?.data?.data
 
-    return () => (mounted == false);
-  }, [])
+  let top10 = []
+  if (users){
+    top10 = users.length <= 10 ? users : users.slice(10)
+  }
 
   return (
     <Box sx={{ width: '100%', padding: '10px', }}>
       <Stack spacing={2}>
         <RankingBox>Bảng xếp hạng</RankingBox>
         {
-          ranks.map((item) => {
+          top10.map((item) => {
               return <Item>{item.name}</Item>
           })
         }

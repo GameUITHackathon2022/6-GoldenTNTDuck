@@ -19,7 +19,7 @@ const steps = ['Lựa chọn khu đất', 'Lựa chọn ô đất', 'Lựa chọ
 const renderStep = (step, handleBack, handleNext) => {
   switch(step){
     case 0:
-      return <Step5 handleBack={handleBack} handleNext={handleNext} />
+      return <Step1 handleBack={handleBack} handleNext={handleNext} />
     case 1:
       return <Step2 handleBack={handleBack} handleNext={handleNext} />
     case 2:

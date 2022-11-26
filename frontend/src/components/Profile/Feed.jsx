@@ -1,4 +1,3 @@
-import { Box, Skeleton, Stack, styled } from '@mui/material';
 import React, { useState } from 'react';
 import CardAchievement from './Items/CardAchivement';
 import Grid from '@mui/material/Grid';

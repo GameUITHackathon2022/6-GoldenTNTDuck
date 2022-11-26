@@ -5,7 +5,6 @@ import SignIn from './views/Auth/SignIn';
 import SignUp from './views/Auth/SignUp';
 import Landing from './views/Landing';
 import Profile from './views/Profile';
-import ProtectedRoute from './routes/ProtectedRoute'
 import SetAccount from './views/SetAccount'
 import Store from './views/Store';
 
@@ -18,7 +17,7 @@ function App() {
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/dashboard' element={<HomePage />}/>
         <Route path='/profile' element={<Profile />}/>
-        <Route path='/change-profile' element={<SetAccount />} />
+        <Route path='/change-profile' element={<SetAccount />}/>
         <Route path='/store' element={<Store />} />
       </Routes>
     </div>

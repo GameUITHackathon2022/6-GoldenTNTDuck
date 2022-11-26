@@ -1,18 +1,13 @@
 import {
   Avatar,
   Card,
-  CardActions,
   CardContent,
   CardHeader,
-  CardMedia,
-  Checkbox,
   IconButton,
   Typography,
 } from '@mui/material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import ShareIcon from '@mui/icons-material/Share';
 
 const CardPost = () => {
   return (
@@ -34,7 +29,7 @@ const CardPost = () => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          alksdjfaskldjf
+          Tôi đã trồng được thật nhiều cây
         </Typography>
       </CardContent>
     </Card>
