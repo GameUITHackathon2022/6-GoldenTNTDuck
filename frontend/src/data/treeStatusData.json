@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "id": "123123",
+            "name": "Cây bạch đàn",
+            "date" : "Nov 27 2022",
+            "land" : "TP Hồ Chí Minh",
+            "progress": 78
+        },
+        {
+            "id": "32645",
+            "name": "Cây bạch đàn",
+            "date" : "Nov 27 2022",
+            "land" : "Đắk Lắk",
+            "progress": 52
+        },
+        {
+            "id": "123434",
+            "name": "Cây thông",
+            "date" : "Nov 27 2022",
+            "land" : "Tây Nguyên",
+            "progress": 13
+        },
+        {
+            "id": "5764",
+            "name": "Cây bạch đàn",
+            "date" : "Nov 27 2022",
+            "land" : "TP Hồ Chí Minh",
+            "progress": 92
+        }
+    ]
+}
